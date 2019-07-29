@@ -1,0 +1,167 @@
+<div>
+
+  <form [formGroup]="orderForm" (submit)="SaveData()">
+    <table>
+
+      <tr>
+        <td> <b>Method</b></td>
+
+        <td> <input type="text" formControlName="method" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Currency</b></td>
+
+        <td> <input type="text" formControlName="currency" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Invoice Type</b></td>
+
+        <td> <input type="text" formControlName="invoice_type" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Payment Type</b></td>
+
+        <td> <input type="text" formControlName="payment_type" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Delivery Id</b></td>
+
+        <td> <input type="text" formControlName="delivery_id" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Order Id</b></td>
+
+        <td> <input type="text" formControlName="order_id" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Trip Id</b></td>
+
+        <td> <input type="text" formControlName="tripid" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Salesman Id</b></td>
+
+        <td> <input type="text" formControlName="salesman_id" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Customer Id</b></td>
+
+        <td> <input type="text" formControlName="customerid" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Invoice No</b></td>
+
+        <td> <input type="text" formControlName="invoiceNo" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Invoice Date</b></td>
+
+        <td> <input type="text" formControlName="invoice_date" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>due_date</b></td>
+
+        <td> <input type="text" formControlName="due_date" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>payment_term</b></td>
+
+        <td> <input type="text" formControlName="payment_term" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>price_list</b></td>
+
+        <td> <input type="text" formControlName="price_list" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>gross_total</b></td>
+
+        <td> <input type="text" formControlName="gross_total" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>excise</b></td>
+
+        <td> <input type="text" formControlName="excise" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>vat</b></td>
+
+        <td> <input type="text" formControlName="vat" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>pre_vat</b></td>
+
+        <td> <input type="text" formControlName="pre_vat" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>net_total</b></td>
+
+        <td> <input type="text" formControlName="net_total" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>discount</b></td>
+
+        <td> <input type="text" formControlName="discount" />
+        </td>
+      </tr>
+      <tr>
+        <td> <b>total_amount</b></td>
+
+        <td> <input type="text" formControlName="total_amount" />
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <table>
+
+      <tr formArrayName="ItemDetails" *ngFor="let cd of orderForm.controls.ItemDetails.controls ;let i=index;">
+
+        <td formGroupName={{i}}>
+          <b> Item
+
+          </b>
+
+          <input type="text" formControlName="item_id" placeholder="item ID" />
+
+          <input type="text" formControlName="itemvalue" placeholder="Item Value" />
+
+          <input type="text" formControlName="uom" placeholder="UOM" />
+          <input type="text" formControlName="quantity" placeholder="Quantity" />
+          <input type="text" formControlName="vat" placeholder="VAT" />
+          <input type="text" formControlName="pre_vat" placeholder="Pre VAT" />
+          <input type="text" formControlName="excies" placeholder="Excies" />
+          <input type="text" formControlName="discount" placeholder="Discount" />
+          <input type="text" formControlName="discount_amount" placeholder="Discount Amount" />
+          <input type="text" formControlName="net_total" placeholder="Net Total" />
+          <input type="text" formControlName="item_total" placeholder="Item Total" />
+        </td>
+
+      </tr>
+
+      <tr>
+        <td><input type="submit" value="Save" /></td>
+      </tr>
+    </table>
+
+  </form>
+</div>
